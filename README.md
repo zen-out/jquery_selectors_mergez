@@ -2,6 +2,8 @@
 
 The purpose of this package is to allow users to quickly select and change various elements. 
 
+![JQuery Selectors](https://dl.dropbox.com/s/py4rhrl52k8yy7n/jquery_selectors.png)
+
 ## Directions
 
 1. Install the package 
@@ -30,8 +32,8 @@ $(() => {
 
 API 
 
-| What it does                                                          | Example                                                                                        |
-| --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| What it does                                                          | Example                                                                                          |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | mergeE.insertAsFirst()                                                | ` `  ` mergeE.insertAsFirst($("[data-child=1] .grandchild"), $("<div>new Element</div>")) `  ` ` |
 | mergeE.wrapEach()                                                     | ` `  ` mergeE.wrapEach($(".dropdown > *"), $("<div>wrapper</div>")) `  ` ` |
 | mergeE.addToEndOfNthElement(element, index, elementToInsertInto)      | ` `  ` mergeE.addToEndOfNthElement(".dropdown-item", 3, $("<div>new</div>")) `  ` ` |
