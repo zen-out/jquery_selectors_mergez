@@ -1,0 +1,26 @@
+{
+    "name": "jquery_selectors_mergez",
+    "version": "1.0.1",
+    "description": "The purpose of this package is to allow users to quickly select and change various elements.",
+    "main": "index.js",
+    "directories": {
+        "example": "example",
+        "test": "test"
+    },
+    "scripts": {
+        "test": "test.js"
+    },
+    "keywords": [
+        "jquery",
+        "selectors",
+        "merges",
+        "element",
+        "manipulation",
+        "html"
+    ],
+    "author": "lezzles11",
+    "license": "MIT",
+    "dependencies": {
+        "jquery_selectors_mergez": "^1.0.1"
+    }
+}
