@@ -1,6 +1,6 @@
 {
     "name": "jquery_selectors_mergez",
-    "version": "1.1.6",
+    "version": "1.1.7",
     "description": "The purpose of this package is to allow users to quickly select and change various elements.",
     "main": "index.js",
     "directories": {
