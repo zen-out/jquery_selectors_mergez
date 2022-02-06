@@ -1,6 +1,6 @@
 {
     "name": "jquery_selectors_mergez",
-    "version": "1.0.1",
+    "version": "1.0.4",
     "description": "The purpose of this package is to allow users to quickly select and change various elements.",
     "main": "index.js",
     "directories": {
@@ -20,7 +20,9 @@
     ],
     "author": "lezzles11",
     "license": "MIT",
-    "dependencies": {
-        "jquery_selectors_mergez": "^1.0.1"
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/lezzles11/jquery_selectors_mergez.git"
     }
 }
