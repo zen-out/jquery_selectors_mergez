@@ -8,6 +8,7 @@
         "test": "test"
     },
     "scripts": {
+        "start": "git add . && git commit -m 'updated' && git push && npm publish",
         "test": "test.js"
     },
     "keywords": [

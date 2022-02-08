@@ -1,3 +1,5 @@
+![NPM Downloads](https://img.shields.io/npm/dw/jquery_selectors_mergez)
+
 # Purpose 
 
 The purpose of this package is to allow users to quickly select and change various elements. 
