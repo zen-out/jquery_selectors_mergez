@@ -31,94 +31,105 @@ $(() => {
 ```
 <script src="yourScript.js"></script>
 ```
+<a name="MergeElements"></a>
 
-#### mergeE.insertAsFirst()
+## MergeElements
+**Kind**: global class  
+**Date**: 2022-02-01  
 
+* [MergeElements](#MergeElements)
+    * [new MergeElements()](#new_MergeElements_new)
+    * [.insertAsFirst()](#MergeElements+insertAsFirst)
+    * [.wrapEach()](#MergeElements+wrapEach)
+    * [.addToEndOfNthElement()](#MergeElements+addToEndOfNthElement) ⇒ <code>any</code>
+    * [.addToBegOfNthElement()](#MergeElements+addToBegOfNthElement) ⇒ <code>any</code>
+    * [.insertBefore()](#MergeElements+insertBefore) ⇒ <code>any</code>
+    * [.insertAfter()](#MergeElements+insertAfter) ⇒ <code>any</code>
+    * [.insertAsLast(element, child)](#MergeElements+insertAsLast) ⇒ <code>any</code>
+    * [.findAllFirstOfElement()](#MergeElements+findAllFirstOfElement) ⇒ <code>any</code>
+    * [.getAllElementsWithinParent(parent, selector)](#MergeElements+getAllElementsWithinParent) ⇒ <code>any</code>
+    * [.getAllTextWithinElement()](#MergeElements+getAllTextWithinElement) ⇒ <code>any</code>
+    * [.getElementBasedOnSibling()](#MergeElements+getElementBasedOnSibling) ⇒ <code>any</code>
+    * [.insertAsFirstIntoNthElement()](#MergeElements+insertAsFirstIntoNthElement) ⇒ <code>any</code>
+    * [.insertAsLastIntoNthElement(nthElement, lastElementInNth)](#MergeElements+insertAsLastIntoNthElement) ⇒ <code>any</code>
+    * [.changeParent()](#MergeElements+changeParent)
+
+<a name="new_MergeElements_new"></a>
+
+### new MergeElements()
+a way to insert into elements
+
+<a name="MergeElements+insertAsFirst"></a>
+
+### mergeElements.insertAsFirst()
 mergeE.insertAsFirst($("[data-child=1] .grandchild"), newElement)
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 let newElement = $("<div>insert me as first</div>")
-mergeE.insertAsFirst($("[data-child=1] .grandchild"), newElement)
+         mergeE.insertAsFirst($("[data-child=1] .grandchild"), newElement)
 ```
+<a name="MergeElements+wrapEach"></a>
 
-<a name="mergeE+wrapEach"></a>
-
-#### mergeE.wrapEach()
-
+### mergeElements.wrapEach()
 mergeE.wrapEach($(".dropdown > *"), newWrapper)
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 let newWrapper = $("<div class='box'></div>")
-mergeE.wrapEach($(".dropdown > *"), newWrapper)
+         mergeE.wrapEach($(".dropdown > *"), newWrapper)
 ```
+<a name="MergeElements+addToEndOfNthElement"></a>
 
-<a name="mergeE+addToEndOfNthElement"></a>
-
-#### mergeE.addToEndOfNthElement() ⇒ <code>any</code>
-
+### mergeElements.addToEndOfNthElement() ⇒ <code>any</code>
 mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-02-01  
 **Example**  
-
 ```js
 // index works the same as in js, starts with 0
-let newItem = $("<div>newdropdown</div>")
-mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
+  let newItem = $("<div>newdropdown</div>")
+        mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
 ```
+<a name="MergeElements+addToBegOfNthElement"></a>
 
-<a name="mergeE+addToBegOfNthElement"></a>
-
-#### mergeE.addToBegOfNthElement() ⇒ <code>any</code>
-
+### mergeElements.addToBegOfNthElement() ⇒ <code>any</code>
 mergeE.addToBegOfNthElement(".dropdown-item", 3, newItem2)
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 // index works the same as in js, starts with 0
-let newItem2 = $("<div>newdropdown</div>")
-mergeE.addToBegOfNthElement(".dropdown-item", 3, newItem2)
+         let newItem2 = $("<div>newdropdown</div>")
+         mergeE.addToBegOfNthElement(".dropdown-item", 3, newItem2)
 ```
+<a name="MergeElements+insertBefore"></a>
 
-<a name="mergeE+insertBefore"></a>
-
-#### mergeE.insertBefore() ⇒ <code>any</code>
-
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+### mergeElements.insertBefore() ⇒ <code>any</code>
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-02-02  
 **Example**  
-
 ```js
 let newDropdown1 = $(`<a href="#" class="dropdown-item" data-id='0'>og0</a>`)
-mergeE.insertBefore($("[data-id=1]"), $("<div>insert before other element</div>"))
+         mergeE.insertBefore($("[data-id=1]"), $("<div>insert before other element</div>"))
 ```
+<a name="MergeElements+insertAfter"></a>
 
-<a name="mergeE+insertAfter"></a>
-
-#### mergeE.insertAfter() ⇒ <code>any</code>
-
-let newDropdown = $( `<a href="#" class="dropdown-item" data-id='6'>6</a>` )
-
+### mergeElements.insertAfter() ⇒ <code>any</code>
+let newDropdown = $(`<a href="#" class="dropdown-item" data-id='6'>6</a>`)
          mergeE.insertAfter($("[data-id=5]"), $("<div>insert after</div>"))
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-02-02  
-<a name="mergeE+insertAsLast"></a>
+<a name="MergeElements+insertAsLast"></a>
 
-#### mergeE.insertAsLast(element, child) ⇒ <code>any</code>
-
+### mergeElements.insertAsLast(element, child) ⇒ <code>any</code>
 insertAsLast($(".parent"), $(".child"))
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-01-31  
 
 | Param | Type |
@@ -126,20 +137,18 @@ insertAsLast($(".parent"), $(".child"))
 | element | <code>any</code> | 
 | child | <code>any</code> | 
 
-<a name="mergeE+findAllFirstOfElement"></a>
+<a name="MergeElements+findAllFirstOfElement"></a>
 
-#### mergeE.findAllFirstOfElement() ⇒ <code>any</code>
-
+### mergeElements.findAllFirstOfElement() ⇒ <code>any</code>
 findAllFirstOfElement(parent, first)
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
-<a name="mergeE+getAllElementsWithinParent"></a>
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
+<a name="MergeElements+getAllElementsWithinParent"></a>
 
-#### mergeE.getAllElementsWithinParent(parent, selector) ⇒ <code>any</code>
-
+### mergeElements.getAllElementsWithinParent(parent, selector) ⇒ <code>any</code>
 mergeE.getAllElementsWithinParent($(".parent"), $(".selectorWithinParent"))
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-02-06  
 
 | Param | Type |
@@ -147,48 +156,38 @@ mergeE.getAllElementsWithinParent($(".parent"), $(".selectorWithinParent"))
 | parent | <code>any</code> | 
 | selector | <code>any</code> | 
 
-<a name="mergeE+getAllTextWithinElement"></a>
+<a name="MergeElements+getAllTextWithinElement"></a>
 
-#### mergeE.getAllTextWithinElement() ⇒ <code>any</code>
-
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+### mergeElements.getAllTextWithinElement() ⇒ <code>any</code>
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 //     let getText = mergeE.getAllTextWithinElement("[data-parent='2']")
 getAllTextWithinElement(element)
 ```
+<a name="MergeElements+getElementBasedOnSibling"></a>
 
-<a name="mergeE+getElementBasedOnSibling"></a>
-
-#### mergeE.getElementBasedOnSibling() ⇒ <code>any</code>
-
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+### mergeElements.getElementBasedOnSibling() ⇒ <code>any</code>
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 mergeE.getElementBasedOnSibling("[data-greatgrandchild='2']", ".great-grandchild", changeToGreen)
 ```
+<a name="MergeElements+insertAsFirstIntoNthElement"></a>
 
-<a name="mergeE+insertAsFirstIntoNthElement"></a>
-
-#### mergeE.insertAsFirstIntoNthElement() ⇒ <code>any</code>
-
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+### mergeElements.insertAsFirstIntoNthElement() ⇒ <code>any</code>
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 let newLastInsertion2 = $("<div>yoyoas last</div>")
-mergeE.insertAsFirstIntoNthElement(".grandchild", 2, $("<div>insert</div>"))
+         mergeE.insertAsFirstIntoNthElement(".grandchild", 2, $("<div>insert</div>"))
 ```
+<a name="MergeElements+insertAsLastIntoNthElement"></a>
 
-<a name="mergeE+insertAsLastIntoNthElement"></a>
-
-#### mergeE.insertAsLastIntoNthElement(nthElement, lastElementInNth) ⇒ <code>any</code>
-
+### mergeElements.insertAsLastIntoNthElement(nthElement, lastElementInNth) ⇒ <code>any</code>
 insertAsLastIntoNthElement(".parent", 2, $("<div>insert</div>"))
 
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-01-31  
 
 | Param | Type |
@@ -196,15 +195,11 @@ insertAsLastIntoNthElement(".parent", 2, $("<div>insert</div>"))
 | nthElement | <code>any</code> | 
 | lastElementInNth | <code>any</code> | 
 
-<a name="mergeE+changeParent"></a>
+<a name="MergeElements+changeParent"></a>
 
-#### mergeE.changeParent()
-
-**Kind**: instance method of [<code>mergeE</code>](#mergeE)  
+### mergeElements.changeParent()
+**Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Example**  
-
 ```js
 mergeE.changeParent("[data-greatgrandchild='2']", ".parent", changeToPink)
 ```
-
-<!-- apistop -->
