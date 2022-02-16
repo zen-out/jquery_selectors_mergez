@@ -3,7 +3,8 @@ class MergeElements {
      *
      let mergeE = new MergeElements()
      * @description a way to insert into elements 
-     * @date 2022-02-01
+     * @author lezzles11 :) www.github.com/lezzles11
+         * @date 2022-02-01
      * @returns {any}
      */
     constructor() {
@@ -45,7 +46,8 @@ class MergeElements {
              * // index works the same as in js, starts with 0
              *   let newItem = $("<div>newdropdown</div>")
         mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
-             * @date 2022-02-01
+             * @author lezzles11 :) www.github.com/lezzles11
+         * @date 2022-02-01
              * @returns {any}
              */
     addToEndOfNthElement(element, index, elementToInsertInto) {
@@ -72,6 +74,7 @@ class MergeElements {
          * @example
          let newDropdown1 = $(`<a href="#" class="dropdown-item" data-id='0'>og0</a>`)
          mergeE.insertBefore($("[data-id=1]"), $("<div>insert before other element</div>"))
+         * @author lezzles11 :) www.github.com/lezzles11
          * @date 2022-02-02
          * @returns {any}
          */
@@ -84,6 +87,7 @@ class MergeElements {
          *
          let newDropdown = $(`<a href="#" class="dropdown-item" data-id='6'>6</a>`)
          mergeE.insertAfter($("[data-id=5]"), $("<div>insert after</div>"))
+         * @author lezzles11 :) www.github.com/lezzles11
          * @date 2022-02-02
          * @returns {any}
          */
@@ -94,6 +98,7 @@ class MergeElements {
         }
         /**
          * insertAsLast($(".parent"), $(".child"))
+         * @author lezzles11 :) www.github.com/lezzles11
          * @date 2022-01-31
          * @param {any} element
          * @param {any} child
@@ -117,6 +122,7 @@ class MergeElements {
         }
         /**
          * mergeE.getAllElementsWithinParent($(".parent"), $(".selectorWithinParent"))
+         * @author lezzles11 :) www.github.com/lezzles11
          * @date 2022-02-06
          * @param {any} parent
          * @param {any} selector
@@ -165,6 +171,7 @@ class MergeElements {
         }
         /**
          * insertAsLastIntoNthElement(".parent", 2, $("<div>insert</div>"))
+         * @author lezzles11 :) www.github.com/lezzles11
          * @date 2022-01-31
          * @param {any} nthElement
          * @param {any} lastElementInNth
@@ -190,6 +197,38 @@ class MergeElements {
             })
         })
     }
+    indexOf(array, element) {
+
+    }
+    contains(parent, child) {
+        if (child.nodeType == 3) // Android browser always returns false when child is a textnode
+        {
+            child = child.parentNode
+        }
+        if (parent.contains) {
+            return parent.contains(child)
+        }
+        do {
+            if (child.nodeType == 11) {
+                child = child.host
+            }
+            if (child == parent) {
+                return true
+            }
+        } while (child = child.parentNode)
+    }
+    removeChildren(e) {
+        for (var count = e.childNodes.length; count > 0; --count) {
+            e.removeChild(e.firstChild)
+        }
+        return e
+    }
+    removeChildrenAndAdd(parent, e) {
+        return this.removeChildren(parent).appendChild(e)
+    }
+    removeNode = (node) => {
+        node.parentElement.removeChild(node);
+    };
 
 }
 
