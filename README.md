@@ -1,5 +1,6 @@
 ![NPM Downloads](https://img.shields.io/npm/dw/jquery_selectors_mergez)
 
+[![here](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/jquery_selectors_mergez.png)](https://github.com/zen-out/zen-out.github.io/blob/master/assets/images/jquery_selectors_mergez.png)
 # Purpose 
 
 The purpose of this package is to allow users to quickly select and change various elements. 
@@ -17,7 +18,7 @@ npm install jquery-selectors-mergez
 2. In your html document, import the script (make sure to import it after your JQuery script, and before your javascript file)
 
 ```
-<script src="https://cdn.jsdelivr.net/npm/jquery_selectors_mergez/index.js"></script>
+<script src="./node_modules/jquery_selectors_mergez"></script>
 ```
 
 3. Create javascript file - make sure to put all your jquery selectors after the instantiator - e.g., 
@@ -132,10 +133,10 @@ insertAsLast($(".parent"), $(".child"))
 **Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-01-31  
 
-| Param | Type |
-| --- | --- |
-| element | <code>any</code> | 
-| child | <code>any</code> | 
+| Param   | Type             |
+|---------|------------------|
+| element | <code>any</code> |
+| child   | <code>any</code> |
 
 <a name="MergeElements+findAllFirstOfElement"></a>
 
@@ -151,10 +152,10 @@ mergeE.getAllElementsWithinParent($(".parent"), $(".selectorWithinParent"))
 **Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-02-06  
 
-| Param | Type |
-| --- | --- |
-| parent | <code>any</code> | 
-| selector | <code>any</code> | 
+| Param    | Type             |
+|----------|------------------|
+| parent   | <code>any</code> |
+| selector | <code>any</code> |
 
 <a name="MergeElements+getAllTextWithinElement"></a>
 
@@ -190,10 +191,10 @@ insertAsLastIntoNthElement(".parent", 2, $("<div>insert</div>"))
 **Kind**: instance method of [<code>MergeElements</code>](#MergeElements)  
 **Date**: 2022-01-31  
 
-| Param | Type |
-| --- | --- |
-| nthElement | <code>any</code> | 
-| lastElementInNth | <code>any</code> | 
+| Param            | Type             |
+|------------------|------------------|
+| nthElement       | <code>any</code> |
+| lastElementInNth | <code>any</code> |
 
 <a name="MergeElements+changeParent"></a>
 

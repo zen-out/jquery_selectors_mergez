@@ -3,8 +3,7 @@ class MergeElements {
      *
      let mergeE = new MergeElements()
      * @description a way to insert into elements 
-     * @author lezzles11 :) www.github.com/lezzles11
-         * @date 2022-02-01
+     * @date 2022-02-01
      * @returns {any}
      */
     constructor() {
@@ -22,11 +21,14 @@ class MergeElements {
          * @example
          let newElement = $("<div>insert me as first</div>")
          mergeE.insertAsFirst($("[data-child=1] .grandchild"), newElement)
+         * adopting an older kid
          */
     insertAsFirst(element, elementToAddAsFirst) {
             let el = this.getNode(element)
             let elFirst = this.getNode(elementToAddAsFirst)
-            el.prepend(elFirst)
+            console.log(el)
+            console.log(elFirst)
+            return el.prepend(elFirst)
         }
         /**
          * mergeE.wrapEach($(".dropdown > *"), newWrapper)
@@ -46,14 +48,15 @@ class MergeElements {
              * // index works the same as in js, starts with 0
              *   let newItem = $("<div>newdropdown</div>")
         mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
-             * @author lezzles11 :) www.github.com/lezzles11
-         * @date 2022-02-01
+             * @date 2022-02-01
              * @returns {any}
              */
     addToEndOfNthElement(element, index, elementToInsertInto) {
             let getEl = this.getNode(element)
             let el = this.getNode(elementToInsertInto)
+            console.log(el)
             let child = $(getEl.eq(index))
+            console.log(child.attr("data-id"))
             el.appendTo(child)
         }
         /**
@@ -73,8 +76,7 @@ class MergeElements {
         /**
          * @example
          let newDropdown1 = $(`<a href="#" class="dropdown-item" data-id='0'>og0</a>`)
-         mergeE.insertBefore($("[data-id=1]"), $("<div>insert before other element</div>"))
-         * @author lezzles11 :) www.github.com/lezzles11
+         mergeE.insertBefore($("[data-id=1]"), newDropdown1)
          * @date 2022-02-02
          * @returns {any}
          */
@@ -86,8 +88,7 @@ class MergeElements {
         /**
          *
          let newDropdown = $(`<a href="#" class="dropdown-item" data-id='6'>6</a>`)
-         mergeE.insertAfter($("[data-id=5]"), $("<div>insert after</div>"))
-         * @author lezzles11 :) www.github.com/lezzles11
+         mergeE.insertAfter($("[data-id=5]"), newDropdown)
          * @date 2022-02-02
          * @returns {any}
          */
@@ -97,8 +98,7 @@ class MergeElements {
             toInsert.insertAfter(el)
         }
         /**
-         * insertAsLast($(".parent"), $(".child"))
-         * @author lezzles11 :) www.github.com/lezzles11
+         * insertAsLast(element, child)
          * @date 2022-01-31
          * @param {any} element
          * @param {any} child
@@ -110,7 +110,11 @@ class MergeElements {
             $(getElement).append(getChild)
         }
         /**
-         * findAllFirstOfElement(parent, first)
+         * findAllFirstOfElement(parent, first, callback)
+         * @date 2022-02-18
+         * @param {any} parent
+         * @param {any} first
+         * @param {any} callback
          * @returns {any}
          */
     findAllFirstOfElement(parent, first, callback) {
@@ -121,9 +125,8 @@ class MergeElements {
             })
         }
         /**
-         * mergeE.getAllElementsWithinParent($(".parent"), $(".selectorWithinParent"))
-         * @author lezzles11 :) www.github.com/lezzles11
-         * @date 2022-02-06
+         * getAllElementsWithinParent(parent, selector)
+         * @date 2022-02-18
          * @param {any} parent
          * @param {any} selector
          * @returns {any}
@@ -132,15 +135,14 @@ class MergeElements {
             let getParent = this.getNode(parent)
             let getE = this.getNode(selector)
             let getChildren = getParent.contents().find(getE)
-                // console.log(getChildren)
             return getChildren
         }
         /**
-         * @example 
+* @example 
 //     let getText = mergeE.getAllTextWithinElement("[data-parent='2']")
-         * getAllTextWithinElement(element)
-         * @returns {any}
-         */
+* getAllTextWithinElement(element)
+* @returns {any}
+*/
     getAllTextWithinElement(element) {
             let getE = this.getNode(element)
             return $(getE).text()
@@ -162,7 +164,7 @@ class MergeElements {
         /**
          * @example
          let newLastInsertion2 = $("<div>yoyoas last</div>")
-         mergeE.insertAsFirstIntoNthElement(".grandchild", 2, $("<div>insert</div>"))
+         mergeE.insertAsFirstIntoNthElement(".grandchild", 2, newLastInsertion2)
          * @returns {any}
          */
     insertAsFirstIntoNthElement(element, order, firstElementInNth) {
@@ -170,8 +172,7 @@ class MergeElements {
             firstElementInNth.prependTo(secondChild)
         }
         /**
-         * insertAsLastIntoNthElement(".parent", 2, $("<div>insert</div>"))
-         * @author lezzles11 :) www.github.com/lezzles11
+         * insertAsLastIntoNthElement("")
          * @date 2022-01-31
          * @param {any} nthElement
          * @param {any} lastElementInNth
@@ -190,46 +191,15 @@ class MergeElements {
         let getParent = this.getNode(parent)
             //  $(`.child[data-child='1']`).parent(`.parent`).before(`parent`)
         let parents = getElement.parent(getParent)
+        console.log(parents.length)
         parents.each((index, e) => {
+            console.log($(`${parent} > *`))
             let children = $(`${parent} > *`)
             children.each((i, child) => {
                 callback($(child))
             })
         })
     }
-    indexOf(array, element) {
-
-    }
-    contains(parent, child) {
-        if (child.nodeType == 3) // Android browser always returns false when child is a textnode
-        {
-            child = child.parentNode
-        }
-        if (parent.contains) {
-            return parent.contains(child)
-        }
-        do {
-            if (child.nodeType == 11) {
-                child = child.host
-            }
-            if (child == parent) {
-                return true
-            }
-        } while (child = child.parentNode)
-    }
-    removeChildren(e) {
-        for (var count = e.childNodes.length; count > 0; --count) {
-            e.removeChild(e.firstChild)
-        }
-        return e
-    }
-    removeChildrenAndAdd(parent, e) {
-        return this.removeChildren(parent).appendChild(e)
-    }
-    removeNode = (node) => {
-        node.parentElement.removeChild(node);
-    };
 
 }
-
 let mergeE = new MergeElements()
