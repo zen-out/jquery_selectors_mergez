@@ -1,11 +1,14 @@
 class MergeElements {
-    /**
-     *
-     let mergeE = new MergeElements()
-     * @description a way to insert into elements 
-     * @date 2022-02-01
-     * @returns {any}
-     */
+    constructor() {
+
+        }
+        /**
+         *
+         let mergeE = new MergeElements()
+         * @description a way to insert into elements 
+         * @date 2022-02-01
+         * @returns {any}
+         */
     constructor() {
 
     }
@@ -28,7 +31,7 @@ class MergeElements {
             let elFirst = this.getNode(elementToAddAsFirst)
             console.log(el)
             console.log(elFirst)
-            return el.prepend(elFirst)
+            el.prepend(elFirst)
         }
         /**
          * mergeE.wrapEach($(".dropdown > *"), newWrapper)
@@ -110,31 +113,21 @@ class MergeElements {
             $(getElement).append(getChild)
         }
         /**
-         * findAllFirstOfElement(parent, first, callback)
-         * @date 2022-02-18
-         * @param {any} parent
-         * @param {any} first
-         * @param {any} callback
+         * findAllFirstOfElement(parent, first)
          * @returns {any}
          */
     findAllFirstOfElement(parent, first, callback) {
-            let getParent = this.getNode(parent)
-            let getFirst = this.getNode(first)
-            getParent.each((index, element) => {
-                callback($(element).find(getFirst).first())
-            })
-        }
-        /**
-         * getAllElementsWithinParent(parent, selector)
-         * @date 2022-02-18
-         * @param {any} parent
-         * @param {any} selector
-         * @returns {any}
-         */
+        let getParent = this.getNode(parent)
+        let getFirst = this.getNode(first)
+        getParent.each((index, element) => {
+            callback($(element).find(getFirst).first())
+        })
+    }
     getAllElementsWithinParent(parent, selector) {
             let getParent = this.getNode(parent)
             let getE = this.getNode(selector)
             let getChildren = getParent.contents().find(getE)
+                // console.log(getChildren)
             return getChildren
         }
         /**
@@ -201,5 +194,28 @@ class MergeElements {
         })
     }
 
+    list() {
+        let string = `
+      mergeE.insertAsFirst($("[data-child=1] .grandchild"), newElement)
+      mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
+      mergeE.wrapEach($(".dropdown > *"), newWrapper)
+      mergeE.addToEndOfNthElement(".dropdown-item", 3, newItem)
+      mergeE.addToBegOfNthElement(".dropdown-item", 3, newItem2)
+      mergeE.insertBefore($("[data-id=1]"), newDropdown1)
+      mergeE.insertAfter($("[data-id=5]"), newDropdown)
+      insertAsLast(element, child)
+      getAllElementsWithinParent(parent, selector) {
+      findAllFirstOfElement(parent, first)
+      mergeE.getAllTextWithinElement("[data-parent='2']")
+      mergeE.insertAsFirstIntoNthElement(".grandchild", 2, newLastInsertion2)
+      insertAsLastIntoNthElement(element, order, lastElementInNth) 
+
+      // callbacks
+      mergeE.changeParent("[data-greatgrandchild='2']", ".parent", changeToPink)
+      mergeE.getElementBasedOnSibling("[data-greatgrandchild='2']", ".great-grandchild", changeToGreen)
+  `
+        console.log(string)
+        return string;
+    }
 }
 let mergeE = new MergeElements()
