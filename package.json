@@ -23,10 +23,7 @@
         "manipulation",
         "html"
     ],
-    "author": "lezzles11",
     "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/lezzles11/jquery_selectors_mergez.git"
-    }
+    "author": "Lesley Cheung (www.github.com/zen-out)",
+    "homepage": "https://zen-out.github.io/packages.html"
 }
