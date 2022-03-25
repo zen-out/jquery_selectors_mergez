@@ -1,14 +1,11 @@
 class MergeElements {
-    constructor() {
-
-        }
-        /**
-         *
-         let mergeE = new MergeElements()
-         * @description a way to insert into elements 
-         * @date 2022-02-01
-         * @returns {any}
-         */
+    /**
+     *
+     let mergeE = new MergeElements()
+     * @description a way to insert into elements 
+     * @date 2022-02-01
+     * @returns {any}
+     */
     constructor() {
 
     }
